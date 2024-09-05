@@ -27,7 +27,7 @@ const sendConfirmationEmail = (userEmail, userName, confirmationCode) => {
     html: `<h1>Email Confirmation</h1>
                <h2>Hello ${userName}</h2>
                <p>Thank you for registering. Please confirm your email by clicking on the following link</p>
-               <a href="http://localhost:5000/api/user/confirm/${confirmationCode}"> Click here</a>`,
+               <a href="https://westminster-real-estate-backapp.onrender.com/api/user/confirm/${confirmationCode}"> Click here</a>`,
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
@@ -97,7 +97,7 @@ const emailConfirmation = async (req, res) => {
     await user.save();
     // Redirect to the frontend confirmation page
     // res.redirect("http://localhost:3000/email-confirmed");
-    res.redirect("http://localhost:3000/login");
+    res.redirect("https://westminster-real-estate-frontend.onrender.com/login");
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error" + err.message);
