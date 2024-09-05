@@ -49,7 +49,7 @@ function ManageProperty() {
   // Get All Poperties
   const getAllProperties = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/property/get-all-properties"
+      "https://westminster-real-estate-backapp.onrender.com/api/property/get-all-properties"
     );
     setAllProperties(response.data);
     console.log(response.data);
@@ -72,7 +72,7 @@ function ManageProperty() {
     try {
       const token = JSON.parse(localStorage.getItem("user"));
       const response = await axios.delete(
-        `http://localhost:5000/api/property/delete-property/${id}`,  {
+        `https://westminster-real-estate-backapp.onrender.com/api/property/delete-property/${id}`,  {
           data: { image: selectedImages },
           headers: {
             Authorization: `Bearer ${token}`,
