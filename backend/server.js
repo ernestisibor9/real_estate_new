@@ -23,7 +23,7 @@ app.use('/api/property', propertyRoute)
 app.use('/api/owner-property', ownerPropertyRoute)
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+  res.sendFile(path.join(__dirname, 'frontend/real_estate/build/index.html'));
 });
 
 
