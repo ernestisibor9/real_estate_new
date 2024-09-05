@@ -21,7 +21,7 @@ function Dashboard() {
     try {
       const token = JSON.parse(localStorage.getItem("user"));
       const response = await axios.get(
-        "http://localhost:5000/api/user/getloggedinuser",
+        "https://westminster-real-estate-backapp.onrender.com/api/user/getloggedinuser",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchDocumentCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/property/count-all-properties');
+        const response = await axios.get('https://westminster-real-estate-backapp.onrender.com/api/property/count-all-properties');
         console.log(response.data);
         
         setCount(response.data);
@@ -74,7 +74,7 @@ function Dashboard() {
     useEffect(() => {
       const fetchDocumentCount = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/user/total-users');
+          const response = await axios.get('https://westminster-real-estate-backapp.onrender.com/api/user/total-users');
           console.log(response.data);
           
           setCountUser(response.data.message);
@@ -91,7 +91,7 @@ function Dashboard() {
     useEffect(() => {
       const fetchDocumentCount = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/property/count-active-properties');
+          const response = await axios.get('https://westminster-real-estate-backapp.onrender.com/api/property/count-active-properties');
           console.log(response.data);
           
           setCountActive(response.data.count);
@@ -109,7 +109,7 @@ function Dashboard() {
     useEffect(() => {
       const fetchDocumentCount = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/property/count-pending-properties');
+          const response = await axios.get('https://westminster-real-estate-backapp.onrender.com/api/property/count-pending-properties');
           console.log(response.data);
           
           setCountPending(response.data.count);
