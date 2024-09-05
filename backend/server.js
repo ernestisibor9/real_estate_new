@@ -22,6 +22,10 @@ app.use('/api/user', userRoute)
 app.use('/api/property', propertyRoute)
 app.use('/api/owner-property', ownerPropertyRoute)
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
+
 
 // Server listening to PORT 5000
 app.listen(PORT, ()=>{
