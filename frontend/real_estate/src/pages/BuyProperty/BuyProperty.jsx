@@ -10,7 +10,7 @@ function BuyProperty() {
   // Get All Poperties Based on Buy
   const getAllBuyProperties = async () => {
     const response = await axios.get(
-      "https://westminster-real-estate-backapp.onrender.com/api/property/get-property-buy"
+      "http://localhost:5000/api/property/get-property-buy"
     );
     setBuyProperties(response.data.properties);
 
