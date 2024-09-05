@@ -54,7 +54,7 @@ const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     // Create a new User
-    const confirmationCode = crypto.randomBytes(16).toString("hex");
+    // const confirmationCode = crypto.randomBytes(16).toString("hex");
     const addUser = new User({
       name: name,
       email: email,
@@ -94,14 +94,14 @@ const emailConfirmation = async (req, res) => {
     }
     // Confirm the user's email
     user.isConfirmed = true;
-    user.confirmationCode = null; // Clear the confirmation code
+    user.confirmationCode = ''; // Clear the confirmation code
     await user.save();
     // Redirect to the frontend confirmation page
     // res.redirect("http://localhost:3000/email-confirmed");
     res.redirect("http://localhost:3000/login");
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server error");
+    res.status(500).send("Server error" + err.message);
   }
 };
 
