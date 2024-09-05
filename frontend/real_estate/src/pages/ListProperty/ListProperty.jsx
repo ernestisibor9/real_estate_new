@@ -21,7 +21,7 @@ function ListProperty() {
     try {
       const token = JSON.parse(localStorage.getItem("user"));
       const response = await axios.get(
-        "https://westminster-real-estate-backapp.onrender.com/api/user/getloggedinuser",
+        "http://localhost:5000/api/user/getloggedinuser",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ function ListProperty() {
     setError("");
     try {
       const response = await axios.post(
-        "https://westminster-real-estate-backapp.onrender.com/api/property/search-by-location",
+        "http://localhost:5000/api/property/search-by-location",
         { query }
       );
       setFeaturedProperties(response.data);
@@ -85,7 +85,7 @@ function ListProperty() {
     setError("");
     try {
       const response = await axios.post(
-        "https://westminster-real-estate-backapp.onrender.com/api/property/search-for",
+        "http://localhost:5000/api/property/search-for",
         { propertyFor }
       );
       setFeaturedProperties(response.data);
@@ -129,7 +129,7 @@ function ListProperty() {
   // Get All Featured Poperties
   const getAllFeaturedProperties = async () => {
     const response = await axios.get(
-      "https://westminster-real-estate-backapp.onrender.com/api/property/get-all-properties"
+      "http://localhost:5000/api/property/get-all-properties"
     );
     setFeaturedProperties(response.data);
     console.log(response.data);
