@@ -94,7 +94,7 @@ const emailConfirmation = async (req, res) => {
     }
     // Confirm the user's email
     user.isConfirmed = true;
-    user.confirmationCode = ''; // Clear the confirmation code
+    // user.confirmationCode = '';  Clear the confirmation code
     await user.save();
     // Redirect to the frontend confirmation page
     // res.redirect("http://localhost:3000/email-confirmed");
