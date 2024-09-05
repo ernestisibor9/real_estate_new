@@ -14,7 +14,7 @@ function PropertyDetails() {
   const getOneProperty = async () => {
     try {
       const response = await axios.get(
-        `https://westminster-real-estate-backapp.onrender.com/api/property/get-single-property/${id}`
+        `http://localhost:5000/api/property/get-single-property/${id}`
       );
       console.log(response.data);
       setSingleProperty(response.data);
