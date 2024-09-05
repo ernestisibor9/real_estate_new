@@ -49,7 +49,7 @@ function ManageProperty() {
   // Get All Poperties
   const getAllProperties = async () => {
     const response = await axios.get(
-      "https://westminster-real-estate-backapp.onrender.com/api/property/get-all-properties"
+      "http://localhost:5000/api/property/get-all-properties"
     );
     setAllProperties(response.data);
     console.log(response.data);
