@@ -29,8 +29,6 @@ const userSchema = new mongoose.Schema({
     },
     confirmationCode:{
         type: String,
-        // unique: true,
-        sparse:true,
     },
 },
 {
